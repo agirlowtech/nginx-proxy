@@ -20,7 +20,7 @@ docker run  \
 -v $(pwd)/proxy/acme:/acmecerts \
 -v $(pwd)/proxy/conf.d:/etc/nginx/conf.d \
 --name proxy \
-ecolowtech/nginx-proxy
+agirlowtech/nginx-proxy
 ```
 
 It's recommended to run with `--net=host` option, like:
@@ -34,7 +34,7 @@ docker run  \
 -v $(pwd)/proxy/conf.d:/etc/nginx/conf.d \
 --name proxy \
 --net=host \
-ecolowtech/nginx-proxy
+agirlowtech/nginx-proxy
 ```
 
 For a docker compose v2 or v3 project, every project has a dedicated network, so, you must use `--net=host` option,  so that it can proxy any projects on you machine.
@@ -46,7 +46,7 @@ version: '2'
 
 services:
   nginx-proxy:
-    image: ecolowtech/nginx-proxy
+    image: agirlowtech/nginx-proxy
     ports:
       - "80:80"
       volumes:
@@ -69,4 +69,4 @@ httpd
 ```
 
 
-The other options: https://github.com/ecolowtech/nginx-proxy/blob/upstream/README.md
+The other options: https://github.com/agirlowtech/nginx-proxy/blob/upstream/README.md
